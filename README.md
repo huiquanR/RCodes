@@ -1,37 +1,23 @@
-## Welcome to GitHub Pages
+## Welcome to the page, which contains some commonly used codes for social science research.
 
-You can use the [editor on GitHub](https://github.com/huiquanR/RCodes/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# 1. Prepare the working environment
+## 1.1 Check and change the system status
+## 1.2 Load the packages
 
-### Markdown
+# 2. Read in the data files
+# 3. Know your data
+# 4. Clean your data
+# 5. Descriptive Stats
+# 6. Descriptive Plots
+# 7. Missings
+# 8. Data Analysis
+# 9. Model Visualization and Outputs
+# 10. Robustness
+# 11. GIS and Maps
+# 12. Social Network Analysis
+# 13. Agent Based Modelling
+# 14. NLP
+# 15. WebScraping
+# 16. RShiny
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/huiquanR/RCodes/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
