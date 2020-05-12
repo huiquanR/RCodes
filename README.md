@@ -1,6 +1,7 @@
 Welcome to the page, which contains some commonly used codes for social science research.
 I am only an entry-level user of R, so this might be too simple for you, or contain some mistakes.
 Feel free to advise me if you have a better idea somewhere :+1:
+Version: MAY/12/2020
 
 # 1. Prepare the Working Environment
 In this section, I listed some functions to begin an analysis.
@@ -11,6 +12,12 @@ In this section, I listed some functions to begin an analysis.
 # Report Sys and Envir information #
 Sys.info()    # will display OS version, etc.
 sessionInfo() # will display R version, Locale, Loaded Packages
+envDocument::getPackageInfo() # getPackageInfo returns information on attached packages including name, version and source.
+#	                Name                                        Value
+#	1        envDocument                   2.4.1 CRAN CRAN 2019-08-08
+
+# set system locale to Simplified Chinese #
+Sys.setlocale(, "CHS")
 ```
 
 ## 1.2 Install R Packages from CRAN/GitHub/Old Packages
@@ -49,49 +56,89 @@ paclist = c("questionr", "devtools", "cplm", "lubridate",
 easypackages::libraries(paclist) # this means using *libraries* FUNCTION in *easypackages* PACKAGE
 ```
 
-# 2. Read in the data files
+# 2. Read/Write Data
 
-## 2.1 Read CSV files
+## 2.1 Read/Write CSV files
 
 ```R 
-# Report Sys and Envir information #
-Sys.info()    # will display OS version, etc.
-sessionInfo() # will display R version, Locale, Loaded Packages
+# default header = T - meaning first row contains variable names.
+mydata = read.csv("X:/address.csv")
+
+# if the first row begins with data - then header = F.
+mydata = read.csv("X:/address.csv", header = F)
+
+# if you need to specify encoding...
+mydata = read.csv("X:/data_SH.csv", header = TRUE, sep = ",", encoding = "ASCII") 
+
+# Write/Output CSV
+
 ```
-## 2.2 Read Excel files
+
+
+
+## 2.2 Read/Write Excel files
 
 ```R 
-# Report Sys and Envir information #
-Sys.info()    # will display OS version, etc.
-sessionInfo() # will display R version, Locale, Loaded Packages
+# load packages
+library(xlsx)
+# encoding needs to be specified if Chinese/Japanese strings are not displayed properly.
+mydata = xlsx::read.xlsx("X:/2019.xlsx", sheetName="Sheet 1", encoding = "UTF-8") 
+
+# a quicker version:
+library(readxl)
+mydata = readxl::read_xlsx("X:/2020.xlsx")
+
+# Write/Output Excel
+
 ```
-## 2.3 Read Stata files
+
+## 2.3 Read/Write Stata files
 
 ```R 
-# Report Sys and Envir information #
-Sys.info()    # will display OS version, etc.
-sessionInfo() # will display R version, Locale, Loaded Packages
+# read.dta {foreign} - version 5-12
+mydata = readstata13::read.dta13("X:/2018.dta")
+
+# read.dta13 - for Stata 13 and newer
+mydata = readstata13::read.dta13(file = "X:/2018.dta", encoding = "cp936")
+
+# Write/Output Stata Data File
+
 ```
 ## 2.4 Read SAS files
-
-```R 
-# Report Sys and Envir information #
-Sys.info()    # will display OS version, etc.
-sessionInfo() # will display R version, Locale, Loaded Packages
-```
 ## 2.5 Read SPSS files
 
-```R 
-# Report Sys and Envir information #
-Sys.info()    # will display OS version, etc.
-sessionInfo() # will display R version, Locale, Loaded Packages
-```
+# 3. Know Your Data
+## 3.1 A quick overview
+## 3.2 Variable names
+## 3.3 Variable classes
+## 3.4 Describe Categorical Variables
+## 3.5 Describe Numeric Variables
 
-# 3. Know your data
 # 4. Clean your data
+## 4.1 Knowing what you are doing
+## 4.2 Rename
+## 4.3 Generate New Var
+## 4.4 Creating a dummy - ifelse FUNCTION
+## 4.5 Recode a multi-level factor - within FUNCTION
+## 4.6 Relevel the Factor
+## 4.7 Numeric Transformation - log, standardize, scale
+
 # 5. Descriptive Stats
+## 5.1 Frequency Tables
+## 5.2 Mean, Median, Mode, SD
+## 5.3 Min, Max, Quintiles
+
 # 6. Descriptive Plots
+## 6.1 Bar
+## 6.2 Pie
+## 6.3 Line
+## 6.4 Box
+## 6.5 Histogram
+
 # 7. Missings
+## 7.1
+## 7.2
+
 # 8. Data Analysis
 # 9. Model Visualization and Outputs
 # 10. Robustness
