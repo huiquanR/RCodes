@@ -3,6 +3,13 @@
 
 # 1. Prepare the working environment
 ## 1.1 Check and change the system status
+
+```R 
+# Report Sys and Envir information #
+Sys.info()    # will display OS version, etc.
+sessionInfo() # will display R version, Locale, Loaded Packages
+```
+
 ## 1.2 Load the packages
 
 # 2. Read in the data files
