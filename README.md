@@ -1,7 +1,10 @@
-Welcome to the page, which contains some commonly used codes for social science research.
+- Version: MAY/12/2020
+
+- Welcome to the page, which contains some commonly used codes for social science research.
 I am only an entry-level user of R, so this might be too simple for you, or contain some mistakes.
-Feel free to advise me if you have a better idea somewhere :+1:
-Version: MAY/12/2020
+Feel free to advise me if you have a better idea somewhere. Thanks.
+
+
 
 # 1. Prepare the Working Environment
 In this section, I listed some functions to begin an analysis.
@@ -12,7 +15,10 @@ In this section, I listed some functions to begin an analysis.
 # Report Sys and Envir information #
 Sys.info()    # will display OS version, etc.
 sessionInfo() # will display R version, Locale, Loaded Packages
-envDocument::getPackageInfo() # getPackageInfo returns information on attached packages including name, version and source.
+
+# getPackageInfo returns information on attached packages 
+# including name, version and source.
+envDocument::getPackageInfo() 
 #	                Name                                        Value
 #	1        envDocument                   2.4.1 CRAN CRAN 2019-08-08
 
@@ -41,16 +47,9 @@ install_version("zipcode", version = "1.0", repos = "http://cran.us.r-project.or
 library(easypackages) # this is loading one package.
 
 # This is naming a list of packages (let's call it paclist) you want to load;
-paclist = c("questionr", "devtools", "cplm", "lubridate", 
-            "rgeos", "dplyr", "car", "Matrix", "utils", "mice", 
-            "sp", "timeDate", "data.table", "effects", "ggeffects",
-            "sjlabelled", "sjmisc", "sjPlot",
-            "ggplot2", "graphics", "grid", "gridExtra",
-            "haven", "pacman", "qdap", "readstata13", "stats",
-            "stringr", "ggthemes", "bbplot", "ggmap", "gganimate", 
-            "maptools", "tidyverse", "MASS", "rsatscan", "desc", 
-            "readxl", "pscl", "xlsx", "texreg", "RCurl", "rvest", 
-            "scales", "fiftystater", "Cairo", "scatterpie", "zipcode")
+paclist = c("sjmisc", "sjPlot",
+            "ggplot2", "graphics", 
+            "grid", "gridExtra")
 
 # Next, we will use one line to load them all.
 easypackages::libraries(paclist) # this means using *libraries* FUNCTION in *easypackages* PACKAGE
@@ -67,11 +66,13 @@ mydata = read.csv("X:/address.csv")
 # if the first row begins with data - then header = F.
 mydata = read.csv("X:/address.csv", header = F)
 
-# if you need to specify encoding...
-mydata = read.csv("X:/data_SH.csv", header = TRUE, sep = ",", encoding = "ASCII") 
+# if you need to specify encoding
+mydata = read.csv("X:/data_SH.csv", 
+                  header = TRUE, sep = ",", 
+                  encoding = "ASCII")
 
 # Write/Output CSV
-
+write_csv(mydata, "X:/data_SH.csv")
 ```
 
 
@@ -89,7 +90,7 @@ library(readxl)
 mydata = readxl::read_xlsx("X:/2020.xlsx")
 
 # Write/Output Excel
-
+writexl::write_xlsx(mydata, "X:/2020.xlsx")
 ```
 
 ## 2.3 Read/Write Stata files
@@ -101,7 +102,8 @@ mydata = readstata13::read.dta13("X:/2018.dta")
 # read.dta13 - for Stata 13 and newer
 mydata = readstata13::read.dta13(file = "X:/2018.dta", encoding = "cp936")
 
-# Write/Output Stata Data File
+# Write/Output Stata Data File and specify version
+haven::write_dta(mydata, version = 13, "X:/2018.dta")
 
 ```
 ## 2.4 Read SAS files
@@ -137,15 +139,33 @@ mydata = readstata13::read.dta13(file = "X:/2018.dta", encoding = "cp936")
 
 # 7. Missings
 ## 7.1
-## 7.2
 
 # 8. Data Analysis
-# 9. Model Visualization and Outputs
-# 10. Robustness
-# 11. GIS and Maps
-# 12. Social Network Analysis
-# 13. Agent Based Modelling
-# 14. NLP
-# 15. WebScraping
-# 16. RShiny
+##
 
+# 9. Model Visualization and Outputs
+##
+
+# 10. Robustness
+##
+
+# 11. GIS and Maps
+##
+
+# 12. Social Network Analysis
+##
+
+# 13. Agent Based Modelling
+##
+
+# 14. NLP
+##
+
+# 15. WebScraping
+##
+
+# 16. RShiny
+##
+
+
+- Thanks.
