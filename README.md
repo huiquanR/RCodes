@@ -1,8 +1,96 @@
-- Version: MAY/12/2020
+- Version: MAY/13/2020
 
 - Welcome to the page, which contains some commonly used codes for social science research.
 I am only an entry-level user of R, so this might be too simple for you, or contain some mistakes.
 Feel free to advise me if you have a better idea somewhere. Thanks.
+
+# 0. Basics
+
+## 0.1 Calculation
+
+```R
+2 + 2
+8 - 1
+3 * 3
+3 / 3
+3 ^ 3
+log(2.718)
+log10(1000)
+scale(50, center = 25, scale = 5)
+mean(c(1,2,3,4))
+sd(c(1,2,3,4))
+```
+
+## 0.2 Objects in R environment
+
+In R, we are working with objects in R environment. 
+The objects include dataframes, vectors, lists, functions, ...
+
+- To know who they are, run:
+```R 
+ls()
+# > ls()
+# [1] "mydata"
+```
+
+- To remove this object, run:
+```R 
+rm(mydata)
+```
+
+- To remove objects other than ideal ones, 
+- Run (often used when you want to clean the working environment):
+```R 
+rm(list = setdiff(ls(), c("TheBelovedDataSet1", "TheBelovedDataSet2")))
+```
+
+## 0.2.1 Generate an object - Vector
+
+```R 
+# create a numeric vector #
+a = c(1, 1, 2, 3, 4)
+
+# to know the class/type of vector#
+class(a)
+typeof(a)
+mode(a)
+
+# to calculate the mean of all the numbers in a #
+# > mean(a)
+# [1] 2.2
+# > stats::median(a)
+# [1] 2
+# > pracma::Mode(a) # Please note - pracma::Mode is different from base::mode
+# [1] 1
+
+# create a string vector #
+b = c("Japan", "India", "India", "Korea")
+# pracma::Mode cannot deal with strings.#
+# create another function to find mode values of a string vector.
+fun_Mode = function(x) {names(sort(-table(x)))[1]}
+fun_Mode(b)
+# > fun_Mode(b)
+# [1] "India"
+```
+
+## 0.3 List
+
+```R 
+
+```
+
+## 0.4 Matrix
+
+```R 
+
+```
+
+## 0.5 Data Frames
+```R 
+
+```
+
+## 0.6
 
 
 
@@ -60,16 +148,17 @@ easypackages::libraries(paclist) # this means using *libraries* FUNCTION in *eas
 ## 2.1 Read/Write CSV files
 
 ```R 
-# default header = T - meaning first row contains variable names.
+# read.table function; header = T - meaning first row contains variable names.
+mydata = read.table("X:/a.csv", header = TRUE, sep = ",")
+
+# default header = T.
 mydata = read.csv("X:/address.csv")
 
 # if the first row begins with data - then header = F.
 mydata = read.csv("X:/address.csv", header = F)
 
 # if you need to specify encoding
-mydata = read.csv("X:/data_SH.csv", 
-                  header = TRUE, sep = ",", 
-                  encoding = "ASCII")
+mydata = read.csv("X:/data_SH.csv", header = TRUE, sep = ",", encoding = "ASCII")
 
 # Write/Output CSV
 write_csv(mydata, "X:/data_SH.csv")
