@@ -21,7 +21,44 @@ mean(c(1,2,3,4))
 sd(c(1,2,3,4))
 ```
 
-## 0.2 Objects in R environment
+## 0.2 Write Notes
+
+```R
+# If you begin a line with POUND "#", 
+# it means you are writing a note.
+# R won't execute the notes.
+# Notes are helpful to explain your codes to others,
+# or simply to yourself - when you 
+# revisit them a year(a month/a week/a day) later.
+# Well, that depends on ...
+```
+
+Some people write notes before a line of codes, some do it after a line of codes.
+
+```R
+# load library #
+library(ggplot2)
+
+# or
+
+library(ggplot2) # loading ggplot2 for plotting
+```
+
+### 0.2.1 Code Blocks and Titles
+
+If you are using RStudio as your IDE for R programming, then you may find this function in RStudio very helpful: Code Blocks.
+
+To divide code blocks, simply seperate them with a line of these (in between you can name the code blocks):
+
+```R
+ # Section One --------------------------------- 
+ # Section Two ================================= 
+ ### Section Three ############################# 
+```
+To be honest, though RStudio claimed these to be different, I personally don't find these sections differ at all. They are not nested... Hmm... Maybe they should be.
+
+
+## 0.3 Objects in R environment
 
 In R, we are working with objects in R environment. 
 The objects include dataframes, vectors, lists, functions, ...
@@ -44,7 +81,7 @@ rm(mydata)
 rm(list = setdiff(ls(), c("TheBelovedDataSet1", "TheBelovedDataSet2")))
 ```
 
-## 0.2.1 Generate an object - Vector
+### 0.3.1 Generate an object - Vector
 
 ```R 
 # create a numeric vector #
@@ -73,26 +110,45 @@ fun_Mode(b)
 # [1] "India"
 ```
 
-## 0.3 List
+### 0.3.2 List
 
 ```R 
 
 ```
 
-## 0.4 Matrix
+### 0.3.3 Matrix
 
 ```R 
 
 ```
 
-## 0.5 Data Frames
+### 0.3.4 Data Frames
 ```R 
 
 ```
 
-## 0.6
+### 0.3.5 User-Defined Functions 
 
+```R 
 
+```
+
+### 0.3.6 Other Common Objects in Your Environment 
+
+## 0.4 Locations in Data/Matrix - Cells/Rows/Columns
+
+### 0.4.1 "$" Dollar mark - A$a$aa
+```R 
+
+```
+### 0.4.2 mydata[1,]
+```R 
+
+```
+### 0.4.3 mydata[,2]
+```R 
+
+```
 
 # 1. Prepare the Working Environment
 In this section, I listed some functions to begin an analysis.
