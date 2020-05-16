@@ -112,30 +112,80 @@ fun_Mode(b)
 
 ### 0.3.2 List
 
-```R 
-
+```R
+# try these and see the outcomes.
+a = list(1,2) 
+a = list(rm, 2) # please note in this case, rm is a FUNCTION
+a = list("rm", 2) # please note in this case, "rm" is a string element
 ```
 
 ### 0.3.3 Matrix
 
 ```R 
+# use matrix function to create function.
+a = matrix(1:9, nrow = 3, ncol = 3)
+a = matrix(1:9, nrow = 3)
+a = matrix(1:9, nrow=3, byrow=TRUE)    # fill matrix row-wise; default is by-column.
 
+# cbind - column-wise; rbind - row-wise.
+a = cbind(c("Jack", "John", "Joe"), c("Sally", "Sue", "Sam"))
+# > a
+#     [,1]   [,2]   
+#[1,] "Jack" "Sally"
+#[2,] "John" "Sue"  
+#[3,] "Joe"  "Sam"  
+a = rbind(c("Jack", "John", "Joe"), c("Sally", "Sue", "Sam"))
+# > a
+#     [,1]    [,2]   [,3] 
+#[1,] "Jack"  "John" "Joe"
+#[2,] "Sally" "Sue"  "Sam"
+
+t(a) # transpose a matrix
+#     [,1]   [,2]   
+#[1,] "Jack" "Sally"
+#[2,] "John" "Sue"  
+#[3,] "Joe"  "Sam" 
 ```
 
 ### 0.3.4 Data Frames
 ```R 
-
+a = data.frame(a)
 ```
 
 ### 0.3.5 User-Defined Functions 
 
 ```R 
+FUNMAX = function(x) {
+    max(x)
+}
+b = c(1,2,3,4)
+FUNMAX(b)
 
+# b = c(1,2,3,4)
+# > FUNMAX(b)
+# [1] 4
 ```
 
 ### 0.3.6 Other Common Objects in Your Environment 
 
-## 0.4 Locations in Data/Matrix - Cells/Rows/Columns
+## 0.4 Indexing/Locating Elements in Data/Matrix - Cells/Rows/Columns
+
+- Basic Indexing
+
+```R 
+a 
+#     [,1]   [,2]   
+#[1,] "Jack" "Sally"
+#[2,] "John" "Sue"  
+#[3,] "Joe"  "Sam" 
+
+# indexing
+a[1,] # 1st row
+a[,1] # 1st column
+a[1]  # 1st element
+a[5]  # 5th element (counting from 1st, then down by column, so the 5th would be "Sue")
+a[c(2:3,),]
+```
 
 ### 0.4.1 "$" Dollar mark - A$a$aa
 ```R 
