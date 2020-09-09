@@ -1,8 +1,7 @@
-- Version: MAY/13/2020
+# Version: Sep/09/2020
 
-- Welcome to the page, which contains some commonly used codes for social science research.
-I am only an entry-level user of R, so this might be too simple for you, or contain some mistakes.
-Feel free to advise me if you have a better idea somewhere. Thanks.
+- Welcome. This page contains some commonly used codes for social science research. I am only an entry-level user of R, so this might be too simple for you, and it might contain some rookie mistakes. So please feel free to advise me if you have a better idea somewhere. 
+- Sincerely, thanks!
 
 # 0. Basics
 
