@@ -36,3 +36,5 @@
 ### [15.Web Scraping 网络数据抓取](/File/15_Web_Scraping.md)
 
 ### [16.Interactive Plots 交互式图形](/File/16_Interactive_Plot.md)
+
+### [17.Miscellaneous 其他](/File/17_Miscellaneous.md)
