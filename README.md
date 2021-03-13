@@ -1,4 +1,4 @@
-# Version: Sep 9, 2020
+# Version: Mar 13, 2021
 
 - Welcome. This folder contains some commonly used codes, examples and tips for R users in social science. I am only an entry-level user of R, so this might be too simple for you, and it might contain some rookie mistakes. So please feel free to advise me if you have a better idea somewhere. 
 - Sincerely, thanks!
@@ -38,4 +38,4 @@
 ### [16.Interactive Plots 交互式图形](/File/16_Interactive_Plot.md)
 
 ### [17.Miscellaneous 其他](/File/17_Miscellaneous.md)
-#### [Other_001_ZIP_EFFECTS](/Other/A_01_Functions_for_ZIP_Effects.md)
+>> >> #### [Other_001_ZIP_EFFECTS](/Other/A_01_Functions_for_ZIP_Effects.md)
