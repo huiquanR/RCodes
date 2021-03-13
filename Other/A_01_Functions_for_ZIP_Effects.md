@@ -4,8 +4,16 @@
 
 
 ```R 
+############################################
+############################################
+
 #### Customized Functions ####
 
+
+############################################
+############################################
+
+# 以下函数是对allEffects的objects进行模型效应提取和规范命名。
 allEff_toDF = function(i) {
   # function to get "AllEffects"
   Extract_allEffectsObj = function(i) {
@@ -14,15 +22,15 @@ allEff_toDF = function(i) {
     ORDER_NUM = function(i) {
       a1 = sapply(i, names)
       a2 = colnames(a1)
-      a3 = stringr::str_count(a2, pattern = ":")
+      a3 = stringr::str_count(a2, pattern = ":") # 此处是检测有没有交互项。
       return(a3+1)
-    }
+    } # 如是二项相乘，则此处返回2；如没有交互项，此处返回1.
     
     # first-order (no interaction) #
     EFF1 = function(i) {
       a1 = as.data.frame(i)
       a2 = as.data.frame(a1[1])
-      a3 = a2[,1:3]
+      a3 = a2[,1:3] # 前三列即可。
       names(a3) = c("TERM", "fit", "se")
       return(a3)
     }
@@ -32,14 +40,14 @@ allEff_toDF = function(i) {
     EFF2 = function(i) {
       a1 = as.data.frame(i)
       a2 = as.data.frame(a1[1])
-      a3 = a2[,3:4]
+      a3 = a2[,3:4] # 此处较为ad hoc仍需generalize
       a4 = a2[,1:2]
       
-      COLLA = function(d) {paste0(d, collapse = "_")}
+      COLLA = function(d) {paste0(d, collapse = "_")} # 将交互项（如有）则粘贴为一个字串 
       a5 = apply(a4, 1, COLLA)
       a6 = cbind(a5, a3)
       
-      names(a6) = c("TERM", "fit", "se")
+      names(a6) = c("TERM", "fit", "se") # 项、预测值、标准误
       return(a6)
     }
     
@@ -47,7 +55,8 @@ allEff_toDF = function(i) {
       return(EFF2(i))
     } else {
       return(EFF1(i))
-    }
+    } # 交互则EFF2；否则EFF1即可。
+    
   } # maybe we could generalize this to higher-order interaction
   
   a = Extract_allEffectsObj(i)
@@ -59,10 +68,23 @@ allEff_toDF = function(i) {
     n = n + 1
   }
   return(g)
-} 
+} # 以上函数是对allEffects的objects进行模型效应提取和规范命名。
 
-#
+
+############################################
+############################################
+
+# 提取term的文字标签。针对的是ZIP模型的零膨胀模型部分。
+# 用到的函数包括
+# attr() 属性标签
+# str() 查看对象结构
+# attributes()$term.labels # 提取标签
+# $terms 
+
 get_MODEL_Labels = function(i) {attributes(i$terms$zero)$term.labels}
+
+############################################
+############################################
 
 ZIP_fit = function(zipmodel) {
   termlist = get_MODEL_Labels(zipmodel)
@@ -78,7 +100,9 @@ ZIP_fit = function(zipmodel) {
   return(a2)
 }
 
-get_MODEL_Labels = function(i) {attributes(i$terms$zero)$term.labels}
+
+############################################
+############################################
 
 
 Get_NB_Terms = function(i) {
