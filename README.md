@@ -38,3 +38,4 @@
 ### [16.Interactive Plots 交互式图形](/File/16_Interactive_Plot.md)
 
 ### [17.Miscellaneous 其他](/File/17_Miscellaneous.md)
+#### [Other_001_ZIP_EFFECTS](/Other/A_01_Functions_for_ZIP_Effects.md)
